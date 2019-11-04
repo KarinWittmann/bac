@@ -1,0 +1,23 @@
+#profile-buttons {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 150px;
+    width: 100%;
+    margin: 10rem;
+}  
+#h1{
+
+    text-align: center;
+    margin: 1rem;
+}
+#pro{
+
+    background-color: lightblue;
+     
+  
+}
+#pic{
+margin: 1rem;
+}

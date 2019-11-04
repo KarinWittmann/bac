@@ -5,12 +5,15 @@
 #log{
     
  display: inline-flexbox;
-margin: 13rem;
 opacity: 0.6;   
 
 }
+
+#testrow{
+    text-align: center;
+}
 #backgroundLogo{
-    background-image: "./wenzi.JPG";
+    background-image: "../assets/nandl.png";
 
 -webkit-background-size: cover;
 -moz-background-size: cover;

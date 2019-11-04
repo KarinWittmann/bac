@@ -18,8 +18,8 @@ const FormPage = () => {
   return (
      <div id="backgroundLogo">
     <MDBContainer  id="log">
-      <MDBRow>
-        <MDBCol md="6">
+      <MDBRow id="testrow">
+        <MDBCol md="12">
           <MDBCard >
             <MDBCardBody>
               <MDBCardHeader className="form-header deep-blue-gradient rounded">

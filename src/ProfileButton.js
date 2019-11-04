@@ -7,7 +7,7 @@ class ProfileButton extends React.Component {
         return (
         <div id="pic">
 
-            <div> <img src={this.props.profilePicture} alt=""height="200" width="300" /> </div>
+            <div> <img src={this.props.profilePicture} alt="" /> </div>
             
 
             

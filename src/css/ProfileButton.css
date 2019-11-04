@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     align-content: center;
     height: 150px;
-    width: 100%;
+    width: 50px;
     margin: 10rem;
 }  
 #h1{
@@ -20,4 +20,15 @@
 }
 #pic{
 margin: 1rem;
+}
+#anlegen{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+ 
+    margin: 10rem;
+
 }

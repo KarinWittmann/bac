@@ -1,0 +1,20 @@
+
+#text{
+    color: #000;
+}
+#log{
+    
+ display: inline-flexbox;
+margin: 13rem;
+opacity: 0.6;   
+
+}
+#backgroundLogo{
+    background-image: "./wenzi.JPG";
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-attachment: fixed;
+}

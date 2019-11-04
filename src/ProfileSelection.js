@@ -13,6 +13,9 @@ class ProfileSelection extends React.Component {
                 <ProfileButton profilePicture="./wenzi.JPG"/>
                 <ProfileButton profilePicture="./wenzi.JPG"/>
             </div>
+            <div id="anlegen">
+            <ProfileButton profilePicture="./wenzi.JPG"/>
+            </div>
          </div>
 
         

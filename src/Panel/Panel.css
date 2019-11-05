@@ -1,0 +1,15 @@
+.Panel{
+    display: flex;
+    flex-flow: column;
+}
+
+
+.Oben{
+    background: #ccc;
+    height: 50vh;
+}
+
+.Unten{
+    background: rgb(110, 110, 110);
+    height: 50vh;
+}

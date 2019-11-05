@@ -1,6 +1,8 @@
-import React, {Component}from 'react';
+import React, {Component} from 'react';
 import LoginForm from './LoginForm/LoginForm';
-import logo from './logo.svg';
+import Slider from './Slider/Slider';
+import Navbar from './Navbar/Navbar';
+import Panel from './Panel/Panel';
 import './App.css';
 
 
@@ -10,18 +12,12 @@ class App extends Component {
     backgroundstyle: 'App'
   }
 
-  setBackroundDarkHandler = () => {
-    this.setState = {
-      tbackgroundstyle: 'AppDark'
-    }
-    console.log(this.state.backgroundstyle)
-  }
-
 render(){
 
   return (
-    <div className={this.state.backgroundstyle}>
-      <LoginForm clicked={()=>this.setBackroundDarkHandler()}/>
+    <div>
+      <Navbar />
+      <Panel />
     </div>
   );
 }

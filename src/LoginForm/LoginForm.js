@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
 
-const loginform = () => {
+const loginform = (props) => {
 
     const wrapper = {
         position: 'absolute',
@@ -20,8 +20,8 @@ const loginform = () => {
 		<h1>Welcome</h1>
 		
 		<form className="form">
-			<input className={styles.Input} type="text" />
-			<input className={styles.Input} type="password" />
+			<input className={styles.Input} onClick={props.clicked} placeholder="Username" type="text" />
+			<input className={styles.Input} placeholder="Passwort" type="password" />
 			<button className={styles.Input} type="submit" id="login-button">Login</button>
 		</form>
 

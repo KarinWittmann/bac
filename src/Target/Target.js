@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/Target.css';
 
 
 class Target extends React.Component {

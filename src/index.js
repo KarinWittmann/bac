@@ -2,18 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Level3 from './Level3';
+
 
 
 import * as serviceWorker from './serviceWorker';
-import ProfileSelection from './ProfileSelection';
-import ProfileButton from './ProfileButton';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './FormPage';
 
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

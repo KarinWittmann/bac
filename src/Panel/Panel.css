@@ -6,10 +6,11 @@
 
 .Oben{
     background: #ccc;
-    height: 50vh;
+    height: 60vh;
 }
 
 .Unten{
+ 
     background: rgb(110, 110, 110);
-    height: 50vh;
+    height: 70vh;
 }

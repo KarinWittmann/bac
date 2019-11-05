@@ -7,8 +7,8 @@ class Description extends Component {
 
         return (
             <div>
-            <h1>Name</h1>
-            <p>Lore Ipsumore Ipsum ore Ipsumore Ipsum ore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsum</p>
+            <h1>Beginner</h1>
+            <p> Let's give it a smooth start.</p>
             {/* <p>{this.state.games.spiel1.name}</p> */}
             </div>  
             

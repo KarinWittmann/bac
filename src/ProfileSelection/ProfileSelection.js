@@ -1,6 +1,6 @@
 import React from 'react';
 import ProfileButton from './ProfileButton';
-import './css/ProfileButton.css';
+
 
 class ProfileSelection extends React.Component {
 

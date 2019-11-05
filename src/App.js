@@ -5,7 +5,7 @@ import Navbar from './Navbar/Navbar';
 import Panel from './Panel/Panel';
 import GameBoard from './GameBoard/GameBoard';
 import Target from './Target/Target';
-import ProfileSelector from './ProfileSelection/ProfileSelection';
+import ProfileSelection from './ProfileSelection/ProfileSelection';
 
 import './App.css';
 
@@ -13,20 +13,20 @@ import './App.css';
 class App extends Component {
 
   state = {
+    loggedIn: true,
     backgroundstyle: 'App'
   }
 
 render(){
-
-  return (
-    <div>
-      <Navbar />
-      <Panel />
-      <GameBoard/>
-      <Target/>
-      <ProfileSelector/>
-    </div>
-  );
+  if(this.state.loggedIn){
+    return (
+      <ProfileSelection />
+    );
+  }else{
+    return (
+      <LoginForm />
+    )
+  }
 }
 
 }

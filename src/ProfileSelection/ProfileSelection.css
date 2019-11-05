@@ -1,0 +1,30 @@
+.ProfileSelection{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightblue;
+    height: 100vh;
+}
+
+.ProfileHeading{
+    text-align: center;
+    margin: 1rem;
+}
+
+.ProfileButtonWrapper{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.Anlegen{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 50vh;
+    height: 5rem;
+}

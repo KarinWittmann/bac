@@ -8,11 +8,13 @@ import Target from './Target';
 class Level2 extends React.Component {
     render() {
       const fieldSize = 300;
+      
       const styles = {
           height: fieldSize,
           width: fieldSize,
           backgroundColor: "gray"
       };
+
       return (
         <div id="level2">
         <GameBoard styles={styles} size={fieldSize}>

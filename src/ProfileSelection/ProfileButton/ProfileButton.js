@@ -1,15 +1,13 @@
 import React from 'react';
-
+import './ProfileButton.css';
 
 class ProfileButton extends React.Component {
 
     render() {
         return (
-        <div id="pic">
+        <div className="ProfileButton">
 
-            <div> <img src={this.props.profilePicture} alt="" /> </div>
-            
-
+            <img src={this.props.profilePicture} />
             
          </div>
         

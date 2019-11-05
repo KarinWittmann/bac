@@ -1,24 +1,24 @@
 import React from 'react';
-import ProfileButton from './ProfileButton';
-
+import ProfileButton from './ProfileButton/ProfileButton';
+import './ProfileSelection.css'
 
 class ProfileSelection extends React.Component {
 
+
     render() {
         return (
-        <div id="pro">
-            <h1 id="h1"> Pick a Profile</h1>
-            <div id="profile-buttons">  
-                <ProfileButton profilePicture="./wenzi.JPG"/>
-                <ProfileButton profilePicture="./wenzi.JPG"/>
-                <ProfileButton profilePicture="./wenzi.JPG"/>
+        <div className="ProfileSelection">
+            <h1 className="ProfileHeading"> Pick a Profile</h1>
+            <div className="ProfileButtonWrapper">  
+                <ProfileButton profilePicture={require('../assets/wenzi.JPG')}/>
+                <ProfileButton profilePicture={require('../assets/wenzi.JPG')}/>
+                <ProfileButton profilePicture={require('../assets/wenzi.JPG')}/>
             </div>
-            <div id="anlegen">
-            <ProfileButton profilePicture="./wenzi.JPG"/>
-            </div>
-         </div>
 
-        
+            <div className="Anlegen">
+            <ProfileButton profilePicture={require('../assets/wenzi.JPG')}/>
+            </div>
+         </div>        
             )
       }
     }

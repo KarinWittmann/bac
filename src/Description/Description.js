@@ -9,7 +9,7 @@ class Description extends Component {
             <div>
             <h1>Name</h1>
             <p>Lore Ipsumore Ipsum ore Ipsumore Ipsum ore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsumore Ipsum</p>
-            <p>{this.state.games.spiel1.name}</p>
+            {/* <p>{this.state.games.spiel1.name}</p> */}
             </div>  
             
         )

@@ -1,36 +1,57 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
+import axios from 'axios';
 
-const loginform = (props) => {
-   
+class LoginForm extends React.Component {
     
-    const wrapper = {
+    onLoginClickHandler() {
+        
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
+        axios.get('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
+            headers: {
+              'content-type': 'application/json',
+              'x-apikey': '5dc456d464e7774913b6ea11',
+              'cache-control': 'no-cache'
+            }}).then(response => {
+            if (response.data.length > 0) {
+                alert("login erfolgreich");
+            }
+            else {
+                alert("benutzername oder passwort falsch");
+            }
+        });
+    }
+
+    render() {
+        const wrapper = {
           
-        position: 'absolute',
-        top: '70%',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        marginTop: '-200px',
-        overflow: 'hidden',
-        textAlign: 'center',
-        backgroundColor: 'lightblue',
-    };
+            position: 'absolute',
+            top: '70%',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            marginTop: '-200px',
+            overflow: 'hidden',
+            textAlign: 'center',
+            backgroundColor: 'lightblue',
+        };
+        return(
+            <div style={wrapper}>
+                <div className={styles.container}>
+            <h1>Welcome</h1>
 
-    return(
-        <div style={wrapper}>
-            <div className={styles.container}>
-		<h1>Welcome</h1>
-		
-		<form className="form">
-			<input className={styles.Input} onClick={props.clicked} placeholder="Username" type="text" />
-			<input className={styles.Input} placeholder="Passwort" type="password" />
-			<button className={styles.Input} type="submit" id="login-button">Login</button>
-		</form>
+            <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
+            <input id="password" className={styles.Input} placeholder="Passwort" type="password" />
+            <button onClick={this.onLoginClickHandler} className={styles.Input} id="login-button">Login</button>
 
-	    </div>
-        </div>
-    )
+
+            </div>
+            </div>
+        )
+    }
+    
 }
 
-export default loginform;
+export default LoginForm;

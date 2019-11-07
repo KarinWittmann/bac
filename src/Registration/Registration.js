@@ -1,16 +1,14 @@
 
 import React from 'react';
 import styles from './Registration.module.css';
-// import axios from 'axios';
+ import axios from 'axios';
 
 class Register extends React.Component {
 
     //     onLoginClickHandler() {
 
-    //         const username = document.getElementById("username").value;
-    //         const password = document.getElementById("password").value;
-    //         const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
-    //         axios.get('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
+            
+         //  axios.put('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
     //             headers: {
     //               'content-type': 'application/json',
     //               'x-apikey': '5dc456d464e7774913b6ea11',

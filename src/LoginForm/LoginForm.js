@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
             marginTop: '-200px',
             overflow: 'hidden',
             textAlign: 'center',
-            backgroundColor: 'lightblue',
+            backgroundColor: 'rosybrown',
         };
         const button = {
             appearance: 'none',
@@ -50,6 +50,7 @@ class LoginForm extends React.Component {
             cursor: 'pointer',
             fontSize: '18px',
             transitionDuration: '0.25s',
+            boxShadow: '6px 6px 10px hsla(300,15%,25%,0.3) inset',
         };
 
         return(

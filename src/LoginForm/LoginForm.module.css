@@ -12,7 +12,7 @@ form {
 	padding: 0;
 	
     font-weight: 300;
-    /*background-image: url(../assets/wenzi.JPG);*/
+    
   
     
 }
@@ -24,17 +24,22 @@ form {
 	padding: 80px 0;
 	height: 400px;
     text-align: center;
-    background-color: coral;
+    border-radius: 1rem;
+    border: solid;
+    background-image: url('../assets/Log.PNG');
    
 
 }
 	
 .container h1{
-    font-size: 40px;
+    font-size: 50px;
+    margin-bottom: 15px;
     transition-duration: 1s;
     transition-timing-function: ease-in-put;
     font-weight: 200;
-    color: white;
+    color:rosybrown;
+    
+    
 }
 
 .container button{
@@ -49,6 +54,8 @@ form {
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
+    box-shadow: 6px 6px 10px hsla(300,15%,25%,0.3) inset;
+
 }
 
 .container button:hover{
@@ -73,19 +80,4 @@ form {
     
     transition-duration: 0.25s;
     font-weight: 300;
-}
-.register-button{
-
-    appearance: none;
-    outline: 0;
-    background-color: green;
-    border: 0;
-    padding: 10px 15px;
-    color: blue ;
-    border-radius: 3px;
-    width: 500px;
-    cursor: pointer;
-    font-size: 18px;
-    transition-duration: 0.25s;
-
 }

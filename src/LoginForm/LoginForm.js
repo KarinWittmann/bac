@@ -37,17 +37,36 @@ class LoginForm extends React.Component {
             textAlign: 'center',
             backgroundColor: 'lightblue',
         };
+        const button = {
+            appearance: 'none',
+            outline: '0',
+            backgroundColor: 'white',
+            border: '0',
+            padding: '10px 15px',
+            marginTop:'15px',
+            color: '#50a3a2',
+            borderRadius: '3px',
+            width: '250px',
+            cursor: 'pointer',
+            fontSize: '18px',
+            transitionDuration: '0.25s',
+        };
+
         return(
             <div style={wrapper}>
                 <div className={styles.container}>
             <h1>Welcome</h1>
 
             <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
-            <input id="password" className={styles.Input} placeholder="Passwort" type="password" />
+            <input id="password" className={styles.Input} placeholder="Password" type="password" />
             <button onClick={this.onLoginClickHandler} className={styles.Input} id="login-button">Login</button>
+            
 
 
-            </div>
+            </div >
+                
+
+            <button style={button} className="register-button" id="register-button">Register</button>
             </div>
         )
     }

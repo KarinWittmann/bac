@@ -6,6 +6,7 @@ import Panel from './Panel/Panel';
 import GameBoard from './GameBoard/GameBoard';
 import Target from './Target/Target';
 import ProfileSelection from './ProfileSelection/ProfileSelection';
+import Registrationen from './Registration/Registration';
 
 import './App.css';
 
@@ -13,14 +14,14 @@ import './App.css';
 class App extends Component {
 
   state = {
-    loggedIn: false,
+    loggedIn: true,
     backgroundstyle: 'App'
   }
 
 render(){
   if(this.state.loggedIn){
     return (
-      <ProfileSelection />
+      <Registrationen />
     );
   }else{
     return (

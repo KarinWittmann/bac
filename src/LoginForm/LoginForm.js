@@ -2,16 +2,19 @@ import React from 'react';
 import styles from './LoginForm.module.css';
 
 const loginform = (props) => {
-
+   
+    
     const wrapper = {
+          
         position: 'absolute',
-        top: '50%',
+        top: '70%',
         left: '0',
         width: '100%',
-        height: '400px',
+        height: '100%',
         marginTop: '-200px',
         overflow: 'hidden',
         textAlign: 'center',
+        backgroundColor: 'lightblue',
     };
 
     return(

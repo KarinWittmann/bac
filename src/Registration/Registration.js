@@ -5,25 +5,25 @@ import styles from './Registration.module.css';
 
 class Register extends React.Component {
 
-    //     onLoginClickHandler() {
-
-            
-         //  axios.put('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
-    //             headers: {
-    //               'content-type': 'application/json',
-    //               'x-apikey': '5dc456d464e7774913b6ea11',
-    //               'cache-control': 'no-cache'
-    //             }}).then(response => {
-    //             if (response.data.length > 0) {
-    //                 alert("login erfolgreich");
-    //             }
-    //             else {
-    //                 alert("benutzername oder passwort falsch");
-    //             }
-    //         });
-    //     }
+       
+            postDataHandler() {
+        
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
+                axios.post('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
+                    headers: {
+                      'content-type': 'application/json',
+                      'x-apikey': '5dc4608cd6e262610002212d',
+                      'cache-control': 'no-cache'
+                    }}).then(response => {
+                   console.log("geht");
+                });
+            }
 
     render() {
+
+        
         const wrapper = {
 
             position: 'absolute',
@@ -43,9 +43,9 @@ class Register extends React.Component {
                 <div className={styles.container}>
                     <h1>Registration </h1>
 
-                    <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
+                    <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text"/>
                     <input id="password" className={styles.Input} placeholder="Password" type="password" />
-                    <button onClick={this.onLoginClickHandler} className={styles.Input} id="login-button">Save my Data</button>
+                    <button onClick={this.postDataHandler} className={styles.Input} id="login-button">Save my Data</button>
                 </div >
              </div>
         );

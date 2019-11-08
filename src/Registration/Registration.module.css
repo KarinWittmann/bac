@@ -17,25 +17,40 @@ form {
     
 }
 .container{
-    
-    justify-content: center;
-	max-width: 600px;
-	margin: 0 auto;
+    margin: 0 auto;
 	padding: 80px 0;
-    height: 500px;
-  
+	height: 500px;
     text-align: center;
+    border-radius: 1rem;
+    border: solid;
+    width: 80%;
     background-image: url('../assets/Regi.jpg');
-
-
 }
 	
 .container h1{
-    font-size: 40px;
+    font-size: 70px;
+    margin: 7px;
     transition-duration: 1s;
     transition-timing-function: ease-in-put;
     font-weight: 200;
     color: white;
+}
+
+@media (max-width: 499px){
+
+    .container{
+        background-position: top;
+        background-repeat: no-repeat;
+        
+    }
+    .container h1{
+        padding: 10px;
+        font-size: 50px;
+    }
+
+
+
+
 }
 
 .container button{

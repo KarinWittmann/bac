@@ -5,17 +5,29 @@ import styles from './Registration.module.css';
 
 class Register extends React.Component {
 
-       
             postDataHandler() {
-        
                 const username = document.getElementById("username").value;
                 const password = document.getElementById("password").value;
-                const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
+
+                /* axios.post('https://targetpractise-3737.restdb.io/rest/usertable/', {
+                    username: username,
+                    password: password 
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });  */
+
+               
+                 const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
                 axios.post('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
                     headers: {
                       'content-type': 'application/json',
-                      'x-apikey': '5dc4608cd6e262610002212d',
-                      'cache-control': 'no-cache'
+                      'x-apikey': '5dc456d464e7774913b6ea11',
+                      'cache-control': 'no-cache',
+                      'Access-Control-Allow-Origin': '*'
                     }}).then(response => {
                    console.log("geht");
                 });
@@ -27,14 +39,16 @@ class Register extends React.Component {
         const wrapper = {
 
             position: 'absolute',
-            top: '70%',
-            left: '0',
             width: '100%',
             height: '100%',
-            marginTop: '-200px',
+            marginTop: '0',
             overflow: 'hidden',
             textAlign: 'center',
-            backgroundColor: 'lightblue',
+            backgroundColor: 'rosybrown',
+            display: 'flex',
+            flexFlow: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
         };
 
 

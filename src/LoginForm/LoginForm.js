@@ -28,14 +28,16 @@ class LoginForm extends React.Component {
         const wrapper = {
           
             position: 'absolute',
-            top: '70%',
-            left: '0',
             width: '100%',
             height: '100%',
-            marginTop: '-200px',
+            marginTop: '0',
             overflow: 'hidden',
             textAlign: 'center',
             backgroundColor: 'rosybrown',
+            display: 'flex',
+            flexFlow: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
         };
         const button = {
             appearance: 'none',

@@ -4,7 +4,10 @@ import axios from 'axios';
 
 class LoginForm extends React.Component {
     
-    onLoginClickHandler() {
+    onLoginClickHandler(event) {
+        event.preventDefault()
+        console.log(event)
+
         
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
@@ -59,11 +62,12 @@ class LoginForm extends React.Component {
             <div style={wrapper}>
                 <div className={styles.container}>
             <h1>Welcome</h1>
-
-            <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
-            <input id="password" className={styles.Input} placeholder="Password" type="password" />
-            <button onClick={this.onLoginClickHandler} className={styles.Input} id="login-button">Login</button>
+<form onSubmit={this.onLoginClickHandler} >
+            <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" required />
+            <input id="password" className={styles.Input} placeholder="Password" type="password" required />
+            <button type="submit" className={styles.Input} id="login-button">Login</button>
             
+</form>            
 
 
             </div >

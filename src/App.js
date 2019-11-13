@@ -8,6 +8,7 @@ import Target from './Target/Target';
 import ProfileSelection from './ProfileSelection/ProfileSelection';
 import Registrationen from './Registration/Registration';
 
+
 import './App.css';
 
 
@@ -18,14 +19,14 @@ class App extends Component {
     backgroundstyle: 'App'
   }
 
-render(){
-  if(this.state.loggedIn){
-    return (
-      <Registrationen />
-    );
-  }else{
-    return (
-      <LoginForm />
+  render(){
+    if(this.state.loggedIn){
+      return (
+        <Registrationen />
+      );
+    }else{
+      return (
+        <LoginForm />
     )
   }
 }

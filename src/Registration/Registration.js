@@ -1,41 +1,46 @@
 
 import React from 'react';
 import styles from './Registration.module.css';
- import axios from 'axios';
+import axios from 'axios';
 
 class Register extends React.Component {
 
-            postDataHandler() {
-                const username = document.getElementById("username").value;
-                const password = document.getElementById("password").value;
+    postDataHandler() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
 
-                /* axios.post('https://targetpractise-3737.restdb.io/rest/usertable/', {
-                    username: username,
-                    password: password 
-                  })
-                  .then(function (response) {
-                    console.log(response);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });  */
+        /* axios.post('https://targetpractise-3737.restdb.io/rest/usertable/', {
+            username: username,
+            password: password 
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });  */
 
-               
-                 const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
-                axios.post('https://targetpractise-3737.restdb.io/rest/usertable' + query,{
-                    headers: {
+
+        const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
+        axios.post('https://targetpractise-3737.restdb.io/rest/usertable',
+            {
+                username,
+                password,
+            },
+            {
+                headers: {
                       'content-type': 'application/json',
                       'x-apikey': '5dc456d464e7774913b6ea11',
-                      'cache-control': 'no-cache',
-                      'Access-Control-Allow-Origin': '*'
-                    }}).then(response => {
-                   console.log("geht");
-                });
-            }
+                      'cache-control': 'no-cache'
+                    }
+            }).then(response => {
+                console.log("geht");
+            });
+    }
 
     render() {
 
-        
+
         const wrapper = {
 
             position: 'absolute',
@@ -57,11 +62,11 @@ class Register extends React.Component {
                 <div className={styles.container}>
                     <h1>Registration </h1>
 
-                    <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text"/>
+                    <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
                     <input id="password" className={styles.Input} placeholder="Password" type="password" />
                     <button onClick={this.postDataHandler} className={styles.Input} id="login-button">Save my Data</button>
                 </div >
-             </div>
+            </div>
         );
     }
 

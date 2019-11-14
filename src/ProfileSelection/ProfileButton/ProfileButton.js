@@ -7,7 +7,7 @@ class ProfileButton extends React.Component {
         return (
         <div className="ProfileButton">
 
-            <img src={this.props.profilePicture} />
+            <img id={this.props.petId} onClick={this.props.onClick} src={this.props.profilePicture} />
             
          </div>
         

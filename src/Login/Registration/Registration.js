@@ -25,9 +25,7 @@ class Register extends React.Component {
             console.log(error);
           });  */
 
-
-        const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
-        axios.post('https://targetpractise-3737.restdb.io/rest/usertable',
+        axios.post('https://targetpractise-3737.restdb.io/rest/usertable/',
             {
                 username,
                 password,
@@ -39,6 +37,7 @@ class Register extends React.Component {
                       'cache-control': 'no-cache'
                     }
             }).then(response => {
+                console.log(response);
                 console.log("Registrierung hat funktioniert");
                 this.setState({
                     isRegistered: true
@@ -75,7 +74,7 @@ class Register extends React.Component {
 
                     <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
                     <input id="password" className={styles.Input} placeholder="Password" type="password" />
-                    <button onClick={this.postDataHandler, this.props.registerClicked} className={styles.Input} id="login-button">Save my Data</button>
+                    <button onClick={this.postDataHandler} className={styles.Input} id="login-button">Save my Data</button>
                 </div >
             </div>
         );

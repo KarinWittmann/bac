@@ -6,16 +6,13 @@ import axios from 'axios';
 class PetProfilCreate extends React.Component {
 
     postDataHandler() {
-        const petname = document.getElementById("petname").value;
+        const name = document.getElementById("petname").value;
         const age = document.getElementById("age").value;
 
-
-
-        const query = '?q={"petname": "' + petname + '", "age": "' + age + '"}';
-        axios.post('https://targetpractise-3737.restdb.io/rest/usertable',
+        axios.post('https://targetpractise-3737.restdb.io/rest/usertable/5dc4608cd6e262610002212d/pet',
             {
-                petname,
-                age,
+                name,
+                age
             },
             {
                 headers: {
@@ -25,6 +22,7 @@ class PetProfilCreate extends React.Component {
                 }
             }).then(response => {
                 console.log("geht");
+                console.log(response);
             });
     }
 
@@ -51,13 +49,10 @@ class PetProfilCreate extends React.Component {
                 <div className={styles.container}>
                     <h1>Create a new profile for your animal </h1>
 
-                    <form onSubmit={this.onLoginClickHandler} >
-                        <input id="petname" className={styles.Input} onClick={this.props.clicked} placeholder="your dog's name" type="text" required />
+                    <input id="petname" className={styles.Input} onClick={this.props.clicked} placeholder="your dog's name" type="text" required />
                         <input id="age" className={styles.Input} placeholder="your dog´s age" type="text" required />
 
-                        <button type="submit" className="Input" id="save_button">save data</button>
-
-                    </form>
+                        <button onClick={this.postDataHandler} className="Input" id="save_button">save data</button>
                 </div >
             </div>
         );

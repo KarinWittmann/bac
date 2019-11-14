@@ -10,7 +10,6 @@ class LoginForm extends React.Component {
         event.preventDefault()
         console.log(event)
 
-        
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
         const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
@@ -22,6 +21,7 @@ class LoginForm extends React.Component {
             }}).then(response => {
             if (response.data.length > 0) {
                 alert("login erfolgreich");
+                console.log(response);
             }
             else {
                 alert("benutzername oder passwort falsch");

@@ -23,7 +23,7 @@ class App extends Component {
     
     return(
       <div>
-        <Login />
+        <ProfileSelection />
       </div>
 
     )

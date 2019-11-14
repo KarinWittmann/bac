@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
+    
     
     onLoginClickHandler(event) {
         event.preventDefault()
@@ -72,8 +74,8 @@ class LoginForm extends React.Component {
 
             </div >
                 
-
-            <button style={button} className="register-button" id="register-button">Register</button>
+            <Link to="/register"><button style={button} className="register-button" id="register-button">Register</button></Link>
+            
             </div>
         )
     }

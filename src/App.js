@@ -11,19 +11,20 @@ import Registration from './Login/Registration/Registration';
 
 
 import './App.css';
+import PetProfilCreate from './ProfileSelection/PetProfileCreate/PetProfilCreate';
 
 
 class App extends Component {
 
   state = {
-    loggedIn: false,
+    loggedIn: true,
     backgroundstyle: 'App'
   }
 
   render(){
     if(this.state.loggedIn){
       return (
-        <Registration />
+        <PetProfilCreate />
       );
     }else{
       return (

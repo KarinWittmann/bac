@@ -5,6 +5,26 @@ import axios from 'axios';
 
 class PetProfilCreate extends React.Component {
 
+
+     state ={
+
+        selectedFile: null
+     }
+    fileSelectedHandler = event =>{
+        this.setState({
+        selectedFile: event.target.files[0]
+        })
+    }
+    fileUploadHandler =() => {
+        const fd = new FormData();
+        fd.append('image',this.state.selectedFile, this.state.selectedFile.name);
+        axios.post('https://targetpractise-3737.restdb.io/home/db/5dc45091d6e2626100021dac/cards/5dc936c1d6e262610002df5d/detail/5dcd8047d6e26261000343d5', fd);
+        .then(res =>{
+
+            console.log(res);
+        });
+    }
+    
     postDataHandler() {
         const name = document.getElementById("petname").value;
         const age = document.getElementById("age").value;
@@ -49,10 +69,19 @@ class PetProfilCreate extends React.Component {
                 <div className={styles.container}>
                     <h1>Create a new profile for your animal </h1>
 
-                    <input id="petname" className={styles.Input} onClick={this.props.clicked} placeholder="your dog's name" type="text" required />
+                    <div className="FilePicker" >
+                    <input type="file" onChange={this.fileSelectedHandler} />
+                    <button onClick={this.fileUploadHandler}>Upload the Pic</button>
+                         
+                   </div>
+
+                    <form onSubmit={this.postDataHandler} >
+
+                        <input id="petname" className={styles.Input} onClick={this.props.clicked} placeholder="your dog's name" type="text" required />
                         <input id="age" className={styles.Input} placeholder="your dog´s age" type="text" required />
 
-                        <button onClick={this.postDataHandler} className="Input" id="save_button">save data</button>
+                        <button className="Input" id="save_button">save data</button>
+                    </form>
                 </div >
             </div>
         );

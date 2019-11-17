@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
-    
     
     onLoginClickHandler(event) {
         event.preventDefault()
         console.log(event)
 
+        
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
         const query = '?q={"username": "' + username + '", "password": "' + password + '"}';
@@ -21,7 +20,6 @@ class LoginForm extends React.Component {
             }}).then(response => {
             if (response.data.length > 0) {
                 alert("login erfolgreich");
-                console.log(response);
             }
             else {
                 alert("benutzername oder passwort falsch");
@@ -74,8 +72,8 @@ class LoginForm extends React.Component {
 
             </div >
                 
-            <Link to="/register"><button style={button} className="register-button" id="register-button">Register</button></Link>
-            
+
+            <button style={button} className="register-button" id="register-button">Register</button>
             </div>
         )
     }

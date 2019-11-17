@@ -6,46 +6,31 @@ import axios from 'axios';
 class Register extends React.Component {
 
 
-    state = {
-        isRegistered: false
-    }
 
-    postDataHandler() {
+    postDataHandler(event) {
+
+        event.preventDefault()
+        console.log(event)
+
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        /* axios.post('https://targetpractise-3737.restdb.io/rest/usertable/', {
-            username: username,
-            password: password 
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });  */
 
-        axios.post('https://targetpractise-3737.restdb.io/rest/usertable/',
+
+        axios.post('https://targetpractise-3737.restdb.io/rest/usertable',
             {
                 username,
                 password,
             },
             {
                 headers: {
-                      'content-type': 'application/json',
-                      'x-apikey': '5dc456d464e7774913b6ea11',
-                      'cache-control': 'no-cache'
-                    }
+                    'content-type': 'application/json',
+                    'x-apikey': '5dc456d464e7774913b6ea11',
+                    'cache-control': 'no-cache'
+                }
             }).then(response => {
-                console.log(response);
-                console.log("Registrierung hat funktioniert");
-                this.setState({
-                    isRegistered: true
-                })
-
-            }).catch(error => {
-                console.log(error);
-            })
+                console.log("geht");
+            });
     }
 
     render() {
@@ -71,10 +56,11 @@ class Register extends React.Component {
             <div style={wrapper}>
                 <div className={styles.container}>
                     <h1>Registration </h1>
-
-                    <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" />
-                    <input id="password" className={styles.Input} placeholder="Password" type="password" />
-                    <button onClick={this.postDataHandler} className={styles.Input} id="login-button">Save my Data</button>
+                    <form onSubmit={this.postDataHandler} >
+                        <input id="username" className={styles.Input} onClick={this.props.clicked} placeholder="Username" type="text" required />
+                        <input id="password" className={styles.Input} placeholder="Password" type="password" required />
+                        <button className={styles.Input} id="login-button">Save my Data</button>
+                    </form>
                 </div >
             </div>
         );

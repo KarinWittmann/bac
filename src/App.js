@@ -12,6 +12,7 @@ import Registration from './Login/Registration/Registration';
 
 import './App.css';
 import PetProfilCreate from './ProfileSelection/PetProfileCreate/PetProfilCreate';
+import Register from './Login/Registration/Registration';
 
 
 class App extends Component {

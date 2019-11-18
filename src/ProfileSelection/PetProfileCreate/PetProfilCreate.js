@@ -61,7 +61,9 @@ class PetProfilCreate extends React.Component {
         {
           headers: {
             "content-type": "application/json",
+
             "x-apikey": "5dc456d464e7774913b6ea11",
+
             "cache-control": "no-cache"
           }
         }
@@ -97,11 +99,7 @@ class PetProfilCreate extends React.Component {
           <h1>Create a new profile for your animal </h1>
 
           <div className="FilePicker">
-            <input
-              id="fileButton"
-              type="file"
-              onChange={this.fileChangedHandler}
-            />
+            <input type="file" onChange={this.fileChangedHandler} />
           </div>
 
           <form>

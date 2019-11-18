@@ -1,26 +1,25 @@
+.FilePicker {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
 form {
   padding: 20px 0;
   position: relative;
   z-index: 2;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  font-weight: 300;
-}
 .container {
   margin: 0 auto;
   padding: 80px 0;
   height: 500px;
   text-align: center;
-  border-radius: 1rem;
-  border: solid;
+
   width: 80%;
 }
-
 .container h1 {
   font-size: 70px;
   margin: 7px;

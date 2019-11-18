@@ -4,7 +4,7 @@ import Slider from "./Slider/Slider";
 import Navbar from "./Navbar/Navbar";
 import Panel from "./Panel/Panel";
 import GameBoard from "./GameBoard/GameBoard";
-import Target from "./Target/Target";
+import Target from "./GameBoard/Target/Target";
 import ProfileSelection from "./ProfileSelection/ProfileSelection";
 import LoginForm from "./Login/LoginForm/LoginForm";
 import Registration from "./Login/Registration/Registration";
@@ -22,7 +22,7 @@ class App extends Component {
     if (this.state.loggedIn) {
       return <PetProfilCreate />;
     } else {
-      return <LoginForm />;
+      return <ProfileSelection />;
     }
   }
 }

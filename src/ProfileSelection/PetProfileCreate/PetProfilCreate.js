@@ -50,21 +50,59 @@ class PetProfilCreate extends React.Component {
     const age = document.getElementById("age").value;
     let image = this.state.selectedFile;
 
+    let formData = new FormData();
+    formData.append("image", image, image.name);
+    // formData.append("name", name);
+    // formData.append("age", age);
+
+    axios
+      .post("https://targetpractise-3737.restdb.io/media", formData, {
+        headers: {
+          "content-type": "multipart/form-data",
+          "x-apikey": "5dc456d464e7774913b6ea11"
+        }
+      })
+      .then(response => {
+        console.log("img uplaoded", response);
+        return axios.post(
+          "https://targetpractise-3737.restdb.io/rest/usertable/5dc4608cd6e262610002212d/pet",
+          {
+            name,
+            age,
+            image: response.data.ids
+          },
+          {
+            headers: {
+              "content-type": "application/json",
+              // "content-type": "multipart/form-data",
+              //  "content-type": "application/x-www-form-urlencoded",
+              "x-apikey": "5dc456d464e7774913b6ea11"
+            }
+          }
+        );
+      })
+      .then(response => {
+        console.log("geht");
+        console.log(response);
+      })
+
+      .catch(error => {
+        console.log("failed", error);
+      });
+    /*
     axios
       .post(
         "https://targetpractise-3737.restdb.io/rest/usertable/5dc4608cd6e262610002212d/pet",
         {
           name,
-          age,
-          image
+          age
         },
         {
           headers: {
             "content-type": "application/json",
-
-            "x-apikey": "5dc456d464e7774913b6ea11",
-
-            "cache-control": "no-cache"
+            // "content-type": "multipart/form-data",
+            //  "content-type": "application/x-www-form-urlencoded",
+            "x-apikey": "5dc456d464e7774913b6ea11"
           }
         }
       )
@@ -76,6 +114,7 @@ class PetProfilCreate extends React.Component {
         alert("Eingabefelder überprüfen");
         console.log(error);
       });
+  */
   };
 
   render() {

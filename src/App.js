@@ -12,17 +12,19 @@ import Registration from "./Login/Registration/Registration";
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
 
+//ToDo Routing
+
 class App extends Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
     backgroundstyle: "App"
   };
 
   render() {
     if (this.state.loggedIn) {
-      return <PetProfilCreate />;
+      return <LoginForm />;
     } else {
-      return <ProfileSelection />;
+      return <Panel />;
     }
   }
 }

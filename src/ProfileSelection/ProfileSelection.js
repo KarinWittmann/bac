@@ -3,6 +3,10 @@ import ProfileButton from "./ProfileButton/ProfileButton";
 import "./ProfileSelection.css";
 import axios from "axios";
 
+// toDo -> Bilder anzeigen
+// CSS Styling
+//Nav rein
+
 class ProfileSelection extends React.Component {
   state = {
     profiles: []

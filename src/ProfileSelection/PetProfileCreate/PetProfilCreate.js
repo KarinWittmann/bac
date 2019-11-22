@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./PetProfilCreate.module.css";
 import axios from "axios";
 
+//toDo Css Styling
+//Nav rein
+
 class PetProfilCreate extends React.Component {
   state = {
     selectedFile: null,
@@ -15,48 +18,17 @@ class PetProfilCreate extends React.Component {
     });
   };
 
-  /*  uploadHandler = () => {
-    const image = new FormData();
-
-    image.append("file", this.state.selectedFile);
-    for (var p of image) {
-      console.log(p);
-    }
-    axios
-      .post(
-        "https://targetpractise-3737.restdb.io/rest/usertable/5dc4608cd6e262610002212d/pet",
-        {
-          image
-        },
-        {
-          headers: {
-            "content-type": "multipart/form-data",
-            "x-apikey": "5dc456d464e7774913b6ea11",
-            "cache-control": "no-cache"
-          }
-        }
-      )
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }; */
-
   postDataHandler = event => {
     event.preventDefault();
     const name = document.getElementById("petname").value;
     const age = document.getElementById("age").value;
-    let image = this.state.selectedFile;
+    const image = this.state.selectedFile;
 
-    let formData = new FormData();
-    formData.append("image", image, image.name);
-    // formData.append("name", name);
-    // formData.append("age", age);
+    const imageFormData = new FormData();
+    imageFormData.append("image", image, image.name);
 
     axios
-      .post("https://targetpractise-3737.restdb.io/media", formData, {
+      .post("https://targetpractise-3737.restdb.io/media", imageFormData, {
         headers: {
           "content-type": "multipart/form-data",
           "x-apikey": "5dc456d464e7774913b6ea11"
@@ -74,8 +46,6 @@ class PetProfilCreate extends React.Component {
           {
             headers: {
               "content-type": "application/json",
-              // "content-type": "multipart/form-data",
-              //  "content-type": "application/x-www-form-urlencoded",
               "x-apikey": "5dc456d464e7774913b6ea11"
             }
           }
@@ -85,36 +55,9 @@ class PetProfilCreate extends React.Component {
         console.log("geht");
         console.log(response);
       })
-
       .catch(error => {
         console.log("failed", error);
       });
-    /*
-    axios
-      .post(
-        "https://targetpractise-3737.restdb.io/rest/usertable/5dc4608cd6e262610002212d/pet",
-        {
-          name,
-          age
-        },
-        {
-          headers: {
-            "content-type": "application/json",
-            // "content-type": "multipart/form-data",
-            //  "content-type": "application/x-www-form-urlencoded",
-            "x-apikey": "5dc456d464e7774913b6ea11"
-          }
-        }
-      )
-      .then(response => {
-        console.log("geht");
-        console.log(response);
-      })
-      .catch(error => {
-        alert("Eingabefelder überprüfen");
-        console.log(error);
-      });
-  */
   };
 
   render() {

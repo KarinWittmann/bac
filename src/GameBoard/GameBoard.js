@@ -1,19 +1,14 @@
-import React from 'react';
-import './GameBoard.css';
-
-
-
+import React from "react";
+import "./GameBoard.css";
 
 class GameBoard extends React.Component {
-  
-    render() {
-      return (
-      <div className="GameBoard" id="game-board">{this.props.children}
-      
+  render() {
+    return (
+      <div style={this.props.styles} id="game-board">
+        {this.props.children}
       </div>
-      );
-    }
-
+    );
   }
+}
 
-  export default GameBoard;
+export default GameBoard;

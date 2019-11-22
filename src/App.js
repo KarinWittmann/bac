@@ -8,6 +8,7 @@ import Target from "./GameBoard/Target/Target";
 import ProfileSelection from "./ProfileSelection/ProfileSelection";
 import LoginForm from "./Login/LoginForm/LoginForm";
 import Registration from "./Login/Registration/Registration";
+import Level2 from "./GameBoard/Level2";
 
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
@@ -16,15 +17,15 @@ import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate
 
 class App extends Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
     backgroundstyle: "App"
   };
 
   render() {
     if (this.state.loggedIn) {
-      return <LoginForm />;
+      return <Level2 />;
     } else {
-      return <Panel />;
+      return <ProfileSelection />;
     }
   }
 }

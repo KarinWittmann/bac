@@ -57,6 +57,7 @@ class PetProfilCreate extends React.Component {
       })
       .catch(error => {
         console.log("failed", error);
+        alert("Fehler beim Bild Upload. Versuchen Sie es mit einem kleineren Bild.");
       });
   };
 

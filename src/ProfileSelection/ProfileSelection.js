@@ -24,11 +24,14 @@ class ProfileSelection extends React.Component {
     // map -> läuft this.state.profiles durch und sagt quasi "führe für jedes profile die funktion darunter aus mit dem return"
     // bei map kommt immer ein array raus. undzwar alle elemente die returned worden sind
     const profiles = this.state.profiles.map(profile => {
+      if (!profile.image) {
+        return;
+      }
       return (
         <ProfileButton
           key={profile._id}
           onClick={this.profileButtonHandler}
-          profilePicture={profile.image}
+          profilePicture={"https://targetpractise-3737.restdb.io/media/" + profile.image}
         />
       );
     });

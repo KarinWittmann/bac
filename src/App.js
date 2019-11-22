@@ -8,7 +8,7 @@ import Target from "./GameBoard/Target/Target";
 import ProfileSelection from "./ProfileSelection/ProfileSelection";
 import LoginForm from "./Login/LoginForm/LoginForm";
 import Registration from "./Login/Registration/Registration";
-import Level2 from "./GameBoard/Level2";
+import Level1 from "./GameBoard/Level1";
 
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     if (this.state.loggedIn) {
-      return <Level2 />;
+      return <Level1 />;
     } else {
       return <ProfileSelection />;
     }

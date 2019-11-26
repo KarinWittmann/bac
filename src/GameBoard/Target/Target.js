@@ -28,6 +28,7 @@ class Target extends React.Component {
       }
     };
   }
+  
 
   render() {
     return (

@@ -3,11 +3,15 @@ import GameBoard from "./GameBoard";
 import Target from "./Target/Target";
 
 class Level3 extends React.Component {
+
+  
   targetClickHandler() {
     alert("Treffer!");
+    
+    
     // TODO neue position setzen bzw. neu rendern
   }
-
+  
   render() {
     console.log("render");
     const fieldSize = 300;
@@ -18,9 +22,9 @@ class Level3 extends React.Component {
     };
     return (
       <div id="level3">
-        <GameBoard styles={styles} size={fieldSize}>
+        <GameBoard flashBackground={'green'}>
           <Target
-            onClick={this.targetClickHandler}
+            onClick={this.onGameTargetClickHandler}
             position="random"
             parentSize={fieldSize}
           />

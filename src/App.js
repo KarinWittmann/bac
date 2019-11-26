@@ -20,7 +20,7 @@ import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate
 
 class App extends Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
     backgroundstyle: "App"
   };
 

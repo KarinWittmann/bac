@@ -4,7 +4,7 @@ import Target from "./Target/Target";
 
 class Level2 extends React.Component {
 
-  constructor(){
+ /*  constructor(){
     super();
     this.onGameBoardClickHandler = this.onGameBoardClickHandler.bind(this);
   }
@@ -25,16 +25,16 @@ function(){
   this.setState({styles : { backgroundColor: "green", height: 300, width: 300}});
 }
 .bind(this),1000);
-}
+} */
 
 
   render() {
-    const fieldSize = 300;
-    const styles = {
+     const fieldSize = 300;
+    /*const styles = {
       height: fieldSize,
       width: fieldSize,
       backgroundColor: "gray"
-    };
+    }; */
     return (
       <div id="level2">
         <GameBoard flashBackground={'green'}>

@@ -39,6 +39,8 @@ class GameBoard extends React.Component {
         }
         })
       }
+
+      
   render() {
   
     return (

@@ -7,7 +7,7 @@ class Target extends React.Component {
   constructor(props) {
     super(props);
 
-    const targetSize = (this.props.parentSize * this.sizePercantage) / 100;
+    const targetSize = (this.props.parentSize * this.sizePercantage) / 150;
     let leftShift, topShift;
     if (this.props.position === "center") {
       leftShift = this.props.parentSize / 2 - targetSize / 2;

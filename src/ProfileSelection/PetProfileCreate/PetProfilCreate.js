@@ -4,6 +4,8 @@ import axios from "axios";
 
 //toDo Css Styling
 //Nav rein
+// Nur 3 Angelegte Profile zulassen
+// Löschesn eines Profils
 
 class PetProfilCreate extends React.Component {
   state = {

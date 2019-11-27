@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {Router} from "react-router";
 import Slider from "./Slider/Slider";
 import Navbar from "./Navbar/Navbar";
 import Panel from "./Panel/Panel";
@@ -15,12 +16,13 @@ import Level3 from "./GameBoard/Level3";
 
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
+import Description from "./Description/Description";
 
 //ToDo Routing
 
 class App extends Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
     backgroundstyle: "App"
   };
 
@@ -28,15 +30,22 @@ class App extends Component {
     if (this.state.loggedIn) {
       return (
       <BrowserRouter>
+      <div>
+      <Switch>
+      <Router history={BrowserRouter}>
         <Route exact path="/" component={Panel}/>
         <Route path="/level1" component ={Level1}/>
         <Route path="/level2" component ={Level2}/>
-        <Route path="/level3" component ={Level3}/>      
+        <Route path="/level3" component ={Level3}/>  
+        <Route path="/Panel" component ={Panel}/>  
+        </Router>
+      </Switch>
+      </div>
       </BrowserRouter>
       
       )
     } else {
-      return <Navbar />;
+      return <ProfileSelection />;
     }
   }
 }

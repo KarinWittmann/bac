@@ -2,11 +2,12 @@ import React from "react";
 import ProfileButton from "./ProfileButton/ProfileButton";
 import "./ProfileSelection.css";
 import axios from "axios";
+import Navigation from "../Navbar/Navbar";
 
-// toDo -> Bilder anzeigen
-// CSS Styling
-//Nav rein
-
+//ToDo
+// CSS Styling responsiv
+// Nur 3 Angelegte Profile zulassen
+// Löschesn eines Profils
 class ProfileSelection extends React.Component {
   state = {
     profiles: []
@@ -21,6 +22,7 @@ class ProfileSelection extends React.Component {
   }
 
   render() {
+ 
     // map -> läuft this.state.profiles durch und sagt quasi "führe für jedes profile die funktion darunter aus mit dem return"
     // bei map kommt immer ein array raus. undzwar alle elemente die returned worden sind
     const profiles = this.state.profiles.map(profile => {
@@ -28,6 +30,9 @@ class ProfileSelection extends React.Component {
         return;
       }
       return (
+      
+     
+       
         <ProfileButton
           key={profile._id}
           onClick={this.profileButtonHandler}
@@ -36,19 +41,30 @@ class ProfileSelection extends React.Component {
       );
     });
     return (
+      
+      
       <div className="ProfileSelection">
+        <Navigation />
         <h1 className="ProfileHeading"> Pick a Profile</h1>
         <div className="ProfileButtonWrapper">{profiles}</div>
+        
 
         <div className="Anlegen">
+        
+        
+        
           <ProfileButton
             onClick={this.createProfileButtonHandler}
             id="create-profile"
             petId="-1"
             profilePicture={require("../assets/PetProfil_create.jpg")}
           />
+           
         </div>
       </div>
+  
+     
+      
     );
   }
 

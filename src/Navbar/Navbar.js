@@ -26,7 +26,7 @@ return(
         </Nav.Item>
 
         <Nav.Item>
-            <Nav.Link className="nav0" href="/Level1">Level1</Nav.Link>
+            <Nav.Link className="nav0" href="/Login">Logout</Nav.Link>
         </Nav.Item>
 </Navbar>
 </div>

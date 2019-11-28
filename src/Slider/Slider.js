@@ -5,16 +5,22 @@ import "./Slider.css";
 // Verlinkung zu Spielen
 // Nav einbinden
 class Slider extends Component {
+
+ 
   state = {
     images: [
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
-      "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
+     
+     
+      <a href={`/Level1`}{ ../assets/Level1.jpg }/>,
+      require("../assets/Level2.jpg"),
+      require("../assets/Level3.jpg"),
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
+      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
     ],
     currentIndex: 0,
     translateValue: 0

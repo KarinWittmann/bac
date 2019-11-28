@@ -27,26 +27,27 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.loggedIn) {
+    //if (this.state.loggedIn) {
       return (
       <BrowserRouter>
       <div>
       <Switch>
-      <Router history={BrowserRouter}>
+     
         <Route exact path="/" component={Panel}/>
         <Route path="/level1" component ={Level1}/>
         <Route path="/level2" component ={Level2}/>
         <Route path="/level3" component ={Level3}/>  
         <Route path="/Panel" component ={Panel}/>  
-        </Router>
+        <Route path="/ProfileSelection" component ={ProfileSelection}/> 
+       
       </Switch>
       </div>
       </BrowserRouter>
       
       )
-    } else {
-      return <ProfileSelection />;
-    }
+   // } else {
+     // return <ProfileSelection />;
+    //}
   }
 }
 

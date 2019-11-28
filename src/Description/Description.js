@@ -8,7 +8,7 @@ class Description extends Component {
 
         return (
            
-            <div>
+            <div className="Description1">
                 
             <h1>Beginner</h1>
             <p> Let's give it a smooth start.</p>

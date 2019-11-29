@@ -39,6 +39,7 @@ class App extends Component {
         <Route path="/level3" component ={Level3}/>  
         <Route path="/Panel" component ={Panel}/>  
         <Route path="/ProfileSelection" component ={ProfileSelection}/> 
+        <Route path="/LoginForm" component ={LoginForm}/>
        
       </Switch>
       </div>

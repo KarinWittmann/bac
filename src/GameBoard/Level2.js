@@ -1,47 +1,79 @@
 import React from "react";
-import GameBoard from "./GameBoard";
+ import GameBoard from "./GameBoard";
 import Target from "./Target/Target";
 
+//// TODO - exit Button
+
+
+
 class Level2 extends React.Component {
-
- /*  constructor(){
-    super();
-    this.onGameBoardClickHandler = this.onGameBoardClickHandler.bind(this);
-  }
   state = {
-    styles : {
-     height: 300,
-     width: 300,
-      backgroundColor: "gray"
+    boardClicked: false,
+    targetClicked: false,
+    bgColor: 'grey',
+    targetPosition: {
+      x: 520,
+      y: 380,
+    },
   }
- };
 
- onGameBoardClickHandler(){
-this.setState({styles : { backgroundColor: "green", height: 300, width: 300}});
+  targetClickedHandler = () => {
+    this.setState({
+      ...this.state,
+      targetClicked: true,
+      bgColor: 'green',
+    })
 
- 
-setTimeout(
-function(){
-  this.setState({styles : { backgroundColor: "green", height: 300, width: 300}});
-}
-.bind(this),1000);
-} */
+    setTimeout(() => {
+      this.resetState()
+      this.resetBgColor()
+      
+    }, 1000)
+  }
 
+  resetBgColor = () => {
+    this.setState({
+      ...this.state,
+      bgColor: 'grey',
+    })
+  }
+
+  boardClickedHandler = () => {
+    this.setState({
+      ...this.state,
+      bgColor: 'red',
+      boardClicked: true,
+    })
+
+    setTimeout(() => {
+      this.resetState()
+      this.resetBgColor()
+    }, 1000)
+  }
+
+  resetState = () => {
+    this.setState({
+      ...this.state,
+      targetClicked: false,
+      boardClicked: false,
+    })
+  }
 
   render() {
-     const fieldSize = 300;
-    /*const styles = {
-      height: fieldSize,
-      width: fieldSize,
-      backgroundColor: "gray"
-    }; */
     return (
-      <div id="level2">
-        <GameBoard flashBackground={'green'}>
-          <Target position="center" parentSize={fieldSize} />
-        </GameBoard>
+      <div>
+        <GameBoard
+          bg={this.state.bgColor}
+          boardClicked={this.boardClickedHandler}
+        />
+        <Target
+          posX={this.state.targetPosition.x}
+          posY={this.state.targetPosition.y}
+          clicked={this.targetClickedHandler}
+        />
       </div>
-    );
+    )
   }
 }
-export default Level2;
+
+export default Level2

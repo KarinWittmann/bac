@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Slider.css";
 
-//ToDo  Bilder ändern
+
 // Verlinkung zu Spielen
-// Nav einbinden
+
 class Slider extends Component {
 
  
@@ -11,10 +11,10 @@ class Slider extends Component {
     images: [
      
      
-      <a href={`/Level1`}{ ../assets/Level1.jpg }/>,
+      require("../assets/Level1.jpg"),
       require("../assets/Level2.jpg"),
       require("../assets/Level3.jpg"),
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
+       //"https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
       // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
       // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
       // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",

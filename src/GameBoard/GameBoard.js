@@ -1,4 +1,5 @@
-// TODO - exit Button
+
+//mouse on und mouse up (get time) statt Button
 
 import React from 'react'
 

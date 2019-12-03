@@ -1,5 +1,7 @@
 import React from 'react';
 import GameBoard from './GameBoard';
+import Button from './Button';
+
 
 // TODO - exit Button oder nur 10x spiele?
 
@@ -9,7 +11,7 @@ import GameBoard from './GameBoard';
 state = {
   boardClicked: false,
   targetClicked: false,
-  bgColor: 'grey',
+  bgColor: '#474747',
   targetPosition: {
     x: 520,
     y: 380,
@@ -33,7 +35,7 @@ targetClickedHandler = () => {
 resetBgColor = () => {
   this.setState({
     ...this.state,
-    bgColor: 'grey',
+    bgColor: '#474747',
   })
 }
 
@@ -58,15 +60,18 @@ resetState = () => {
   })
 }
 
+
 render() {
   return (
     <div>
+      
       <GameBoard
         bg={this.state.bgColor}
         boardClicked={this.boardClickedHandler}
       />
-      
+     
     </div>
+    
   )
 }
 }

@@ -40,6 +40,7 @@ class App extends Component {
         <Route path="/Panel" component ={Panel}/>  
         <Route path="/ProfileSelection" component ={ProfileSelection}/> 
         <Route path="/LoginForm" component ={LoginForm}/>
+        <Route path="/PetProfileCreate" component ={PetProfilCreate}/>
        
       </Switch>
       </div>

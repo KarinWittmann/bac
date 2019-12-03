@@ -14,12 +14,6 @@ class Slider extends Component {
       require("../assets/Level1.jpg"),
       require("../assets/Level2.jpg"),
       require("../assets/Level3.jpg"),
-       //"https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
-      // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
       // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
     ],
     currentIndex: 0,
@@ -73,7 +67,7 @@ class Slider extends Component {
           ))}
         </div>
 
-        <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+        <LeftArrow goToPrevSlide={this.goToPrevSlide}/>
 
         <RightArrow goToNextSlide={this.goToNextSlide} />
       </div>
@@ -93,7 +87,7 @@ const Slide = ({ image }) => {
 
 const LeftArrow = props => {
   return (
-    <div className="backArrow arrow" onClick={props.goToPrevSlide}>
+    <div className="backArrow arrow" onClick={props.goToPrevSlide} >
       <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
     </div>
   );

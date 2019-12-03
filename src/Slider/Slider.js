@@ -82,7 +82,9 @@ const Slide = ({ image, levelId }) => {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "50% 60%"
+    backgroundPosition: "50% 60%",
+   
+
   };
   return <a href={level}><div className="slide" style={styles}></div></a>;
 };

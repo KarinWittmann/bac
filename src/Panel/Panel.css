@@ -2,9 +2,9 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-    margin-top: 
+
 }
-@media only screen ands
+@media only screen and
 (min-device-width:768px) and
 (max-device-width:1024px) and
 (orientation: landscape)
@@ -14,7 +14,7 @@
         width: 100%;
         height: 100%;
         padding-top: 3rem;
-       
+
     }
  }
  @media only screen and
@@ -33,7 +33,7 @@
     height: 50vh;
     width: 100vw;
     padding-top: 2.5rem;
-    
+
 }
 @media only screen and
 (min-device-width:768px) and
@@ -55,7 +55,7 @@
  }
 
 .Unten{
- 
+
     background: rgb(110, 110, 110);
     height: 50vh;
     width: 100vw;
@@ -68,7 +68,7 @@
         background-color: lightgray;
         width: 100%;
         height: 37vw;
-        
+
     }
  }
  @media only screen and

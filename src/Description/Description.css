@@ -4,14 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+   margin-top: 3rem;
 }
 
 .DescriptionBody{
-    margin-top: 1rem 0s;
+     margin-top: 1rem 0s;
     font-size: 1.5rem;
-    font-weight: 200;
-}
-h1{
+    font-weight: 200; 
     text-align: center;
-    padding-top: 0.5rem;
 }
+ 

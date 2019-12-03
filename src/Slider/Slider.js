@@ -9,8 +9,6 @@ class Slider extends Component {
  
   state = {
     images: [
-     
-     
       require("../assets/Level1.jpg"),
       require("../assets/Level2.jpg"),
       require("../assets/Level3.jpg"),
@@ -22,6 +20,7 @@ class Slider extends Component {
 
   goToPrevSlide = () => {
     console.log("inisde gotoPRevSlide");
+    this.props.leftClicked();
     if (this.state.currentIndex === 0) return;
 
     this.setState(prevState => ({
@@ -34,6 +33,8 @@ class Slider extends Component {
     // Exiting the method early if we are at the end of the images array.
     // We also want to reset currentIndex and translateValue, so we return
     // to the first image in the array.
+    this.props.rightClicked();
+
     if (this.state.currentIndex === this.state.images.length - 1) {
       return this.setState({
         currentIndex: 0,

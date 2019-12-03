@@ -8,16 +8,11 @@ class Description extends Component {
 
         return (
            
-            <div className="Description1">
-                
-            <h1>Beginner</h1>
-            <p> Let's give it a smooth start.</p>
-            <p>In this Level the main Display ist gray.</p>
-            <p>As soon as your Dog touches the Screen the display turnes green</p>
-            <p>The important part now is, that you give your Dog a Leckerli</p>
-
-            <p>Have fun</p>
-            {/* <p>{this.state.games.spiel1.name}</p> */}
+            <div className="Description">
+                <h1>{this.props.description.heading}</h1>
+                <div className="DescriptionBody">
+                <p>{this.props.description.text}</p>
+                </div>
             </div>  
             
         )

@@ -2,9 +2,9 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-   
+    margin-top: 
 }
-@media only screen and
+@media only screen ands
 (min-device-width:768px) and
 (max-device-width:1024px) and
 (orientation: landscape)

@@ -9,7 +9,7 @@ class Register extends React.Component {
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-
+    
     axios
       .post(
         "https://targetpractise-3737.restdb.io/rest/usertable",

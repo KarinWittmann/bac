@@ -11,7 +11,7 @@ class LoginForm extends React.Component {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const query =
-      '?q={"username": "' + username + '", "password": "' + password + '"}';
+      '?q={"username": "' + encodeURIComponent(username) + '", "password": "' + encodeURIComponent(password) + '"}';
     axios
       .get("https://targetpractise-3737.restdb.io/rest/usertable" + query, {
         headers: {

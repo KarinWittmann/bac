@@ -63,7 +63,7 @@ class Slider extends Component {
           }}
         >
           {this.state.images.map((image, i) => (
-            <Slide key={i} image={image} />
+            <Slide key={i} levelId={i+1} image={image} />
           ))}
         </div>
 
@@ -75,14 +75,15 @@ class Slider extends Component {
   }
 }
 
-const Slide = ({ image }) => {
+const Slide = ({ image, levelId }) => {
+  const level = "/level" + levelId;
   const styles = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "50% 60%"
   };
-  return <div className="slide" style={styles}></div>;
+  return <a href={level}><div className="slide" style={styles}></div></a>;
 };
 
 const LeftArrow = props => {

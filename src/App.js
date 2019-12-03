@@ -20,13 +20,18 @@ import Description from "./Description/Description";
 
 //ToDo Routing
 
+const AppContext = React.createContext('appContext');
+
 class App extends Component {
+  
   state = {
     loggedIn: false,
     backgroundstyle: "App"
   };
 
   render() {
+    AppContext.displayName = 'MyDisplayName';
+
     //if (this.state.loggedIn) {
       return (
       <BrowserRouter>
@@ -41,6 +46,7 @@ class App extends Component {
         <Route path="/ProfileSelection" component ={ProfileSelection}/> 
         <Route path="/LoginForm" component ={LoginForm}/>
         <Route path="/PetProfileCreate" component ={PetProfilCreate}/>
+        <Route path="/register" component ={Registration}/>
        
       </Switch>
       </div>

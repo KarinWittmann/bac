@@ -26,11 +26,20 @@ class Register extends React.Component {
         }
       )
       .then(response => {
-        console.log("geht");
+        // TODO abfrage auf erfolg
+        // TODO navigiere auf startseite nach erfolgreicher registration
+        window.loginInfo = {
+          id : response.data._id,
+          loggedIn : true
+        };
+        console.log(response);
+        
       });
   }
 
   render() {
+    console.log("context");
+    console.log(this.context);
     const wrapper = {
       position: "absolute",
       width: "100%",

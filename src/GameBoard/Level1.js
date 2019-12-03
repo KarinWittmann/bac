@@ -11,11 +11,7 @@ import Button from './Button';
 state = {
   boardClicked: false,
   targetClicked: false,
-  bgColor: '#474747',
-  targetPosition: {
-    x: 520,
-    y: 380,
-  },
+  bgColor: '#474747'
 }
 
 targetClickedHandler = () => {

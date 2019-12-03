@@ -6,7 +6,7 @@ class Button extends React.Component {
         return (
           <div>
             
-            <Button Classname="exit" id="exit" onClick={window.location.href="/Panel"}></Button>
+            <button Classname="exit" id="exit" onClick={window.location.href="/Panel"}></button>
             
           </div>
           

@@ -81,7 +81,7 @@ class PetProfilCreate extends React.Component {
     return (
       <div style={wrapper}>
         <div className={styles.container}>
-          <h1>Create a new profile for your animal </h1>
+          <h1>Create a new profile for your pet </h1>
 
           <div className="FilePicker">
             <input type="file" onChange={this.fileChangedHandler} />

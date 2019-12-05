@@ -18,6 +18,7 @@ class ProfileSelection extends React.Component {
   }
 
   createProfileButtonHandler() {
+    window.location.href="/PetProfileCreate"
     alert("neues profil erstellen");
   }
 

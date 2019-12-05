@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./LoginForm.module.css";
 import axios from "axios";
 import { link } from "fs";
+import {withRouter} from 'react-router-dom';
 
 class LoginForm extends React.Component {
   onLoginClickHandler(event) {
@@ -23,13 +24,16 @@ class LoginForm extends React.Component {
       .then(response => {
         console.log(response.data);
         if (response.data.length > 0) {
-          
-          alert("login erfolgreich");
+           window.location.href="/ProfileSelection"// nicht super -> Läd Seite neu neu 
+                    alert("login erfolgreich");
         } else {
           alert("benutzername oder passwort falsch");
         }
+      }).catch(error => {
+        console.log(error);
       });
   }
+
 
   render() {
     const wrapper = {
@@ -95,4 +99,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

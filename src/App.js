@@ -17,6 +17,7 @@ import Level3 from "./GameBoard/Level3";
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
 import Description from "./Description/Description";
+import Scores from "./Scores/Scores";
 
 //ToDo Routing
 
@@ -42,11 +43,12 @@ class App extends Component {
         <Route path="/level1" component ={Level1}/>
         <Route path="/level2" component ={Level2}/>
         <Route path="/level3" component ={Level3}/>  
-        <Route path="/Panel" component ={Panel}/>  
-        <Route path="/ProfileSelection" component ={ProfileSelection}/> 
-        <Route path="/LoginForm" component ={LoginForm}/>
-        <Route path="/PetProfileCreate" component ={PetProfilCreate}/>
+        <Route path="/panel" component ={Panel}/>  
+        <Route path="/profileSelection" component ={ProfileSelection}/> 
+        <Route path="/loginForm" component ={LoginForm}/>
+        <Route path="/petProfileCreate" component ={PetProfilCreate}/>
         <Route path="/register" component ={Registration}/>
+        <Route path="/scores" component ={Scores}/>
        
       </Switch>
       </div>

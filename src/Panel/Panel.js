@@ -9,15 +9,15 @@ const Panel = (props) => {
     const [descriptions , setDescriptions] = useState([
         {
             heading: 'Beginner',
-            text: 'In this Level the main Display ist gray. As soon as your Dog touches the Screen the display turnes green. The important part now is, that you give your Dog a Treat.Have fun'
+            text: 'In this Level the main Display ist gray. As soon as your dog touches the Screen the display turnes green. Please reward your dog with a treat in that case. Have fun'
         },
         {
             heading: 'Advanced',
-            text: 'Advanced - In this Level the main Display ist gray. As soon as your Dog touches the Screen the display turnes green. The important part now is, that you give your Dog a Leckerli. Have fun'
+            text: 'Advanced - In this Level the main Display ist gray with a white target square. As soon as your dog touches the target the display turnes green. Please reward your dog with a treat in that case. Have fun'
         },
                 {
             heading: 'Expert',
-            text: 'Expert - In this Level the main Display ist gray. As soon as your Dog touches the Screen the display turnes green. The important part now is, that you give your Dog a Leckerli. Have fun'
+            text: 'Pro - In this Level the main Display ist gray with a white target square that changes place after each attempt. As soon as your dog touches the target the display turnes green and the target moves to another place. Please reward your dog with a treat. Have fun'
         }
     ])
     const[current, setCurrent] = useState(0);

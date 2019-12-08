@@ -25,6 +25,7 @@ class LoginForm extends React.Component {
         console.log(response.data);
         if (response.data.length > 0) {
            window.location.href="/ProfileSelection"// nicht super -> Läd Seite neu neu 
+           //this.context.history.push('/ProfileSelection')
                     alert("login erfolgreich");
         } else {
           alert("benutzername oder passwort falsch");

@@ -4,6 +4,7 @@ import Target from "./Target/Target";
 
 
 // TODO - exit Button
+// Als Funktion und responsiv random
 class Level3 extends React.Component {
 
   state = {

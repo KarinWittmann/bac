@@ -4,8 +4,9 @@ import axios from "axios";
 import { link } from "fs";
 import {withRouter} from 'react-router-dom';
 
-class LoginForm extends React.Component {
-  onLoginClickHandler(event) {
+const LoginForm = (props) => {
+
+  const onLoginClickHandler = (event) => {
     event.preventDefault();
     console.log(event);
 
@@ -35,8 +36,6 @@ class LoginForm extends React.Component {
       });
   }
 
-
-  render() {
     const wrapper = {
       position: "absolute",
       width: "100%",
@@ -70,11 +69,11 @@ class LoginForm extends React.Component {
       <div style={wrapper}>
         <div className={styles.container}>
           <h1>Welcome</h1>
-          <form onSubmit={this.onLoginClickHandler}>
+          <form onSubmit={onLoginClickHandler}>
             <input
               id="username"
               className={styles.Input}
-              onClick={this.props.clicked}
+              onClick={props.clicked}
               placeholder="Username"
               type="text"
               required
@@ -97,7 +96,7 @@ class LoginForm extends React.Component {
         </button>
       </div>
     );
-  }
-}
+
+    }
 
 export default withRouter(LoginForm);

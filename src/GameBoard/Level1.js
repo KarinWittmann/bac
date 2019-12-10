@@ -1,75 +1,32 @@
-import React from 'react';
-import GameBoard from './GameBoard';
-import Button from './Button';
+import React, { useState } from "react";
+import GameBoard from "./GameBoard";
+import "./level.css";
 
+//// TODO - exit Button
 
-// TODO - exit Button oder nur 10x spiele?
+const element = {
+  target: "gameboard-target",
+  board: "gameboard-board",
+  default: "gameboard"
+};
 
- class Level1 extends React.Component {
+export default function Level1() {
+  const [clicked, setClicked] = useState(element.default);
+  //const x = '50%';
+  // const y ='50%';
 
+  const clickedhandler = selectedElement => {
+    console.log(selectedElement);
+    setClicked(selectedElement);
+    setTimeout(() => setClicked(element.default), 1000);
+  };
 
-state = {
-  boardClicked: false,
-  targetClicked: false,
-  bgColor: '#474747'
-}
-
-targetClickedHandler = () => {
-  this.setState({
-    ...this.state,
-    targetClicked: true,
-    bgColor: 'green',
-  })
-
-  setTimeout(() => {
-    this.resetState()
-    this.resetBgColor()
-    
-  }, 1000)
-}
-
-resetBgColor = () => {
-  this.setState({
-    ...this.state,
-    bgColor: '#474747',
-  })
-}
-
-boardClickedHandler = () => {
-  this.setState({
-    ...this.state,
-    bgColor: 'green',
-    boardClicked: true,
-  })
-
-  setTimeout(() => {
-    this.resetState()
-    this.resetBgColor()
-  }, 1000)
-}
-
-resetState = () => {
-  this.setState({
-    ...this.state,
-    targetClicked: false,
-    boardClicked: false,
-  })
-}
-
-
-render() {
   return (
     <div>
-      
       <GameBoard
-        bg={this.state.bgColor}
-        boardClicked={this.boardClickedHandler}
+        style={clicked}
+        boardClicked={() => clickedhandler(element.target)}
       />
-     
     </div>
-    
-  )
+  );
 }
-}
-
-export default Level1

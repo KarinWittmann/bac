@@ -18,6 +18,7 @@ import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
 import Description from "./Description/Description";
 import Scores from "./Scores/Scores";
+import Spinner from "./UI/Spinner/Spinner";
 
 //ToDo Routing
 
@@ -38,7 +39,7 @@ class App extends Component {
       <BrowserRouter>
       <div>
       <Switch>
-     
+        <Route path="/spinner" component={Spinner} />
         <Route exact path="/" component={Panel}/>
         <Route path="/level1" component ={Level1}/>
         <Route path="/level2" component ={Level2}/>

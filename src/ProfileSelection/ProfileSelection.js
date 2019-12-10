@@ -3,6 +3,7 @@ import ProfileButton from "./ProfileButton/ProfileButton";
 import "./ProfileSelection.css";
 import axios from "axios";
 import Navigation from "../Navbar/Navbar";
+import Spinner from "../UI/Spinner/Spinner";
 
 //ToDo
 // CSS Styling responsiv
@@ -10,64 +11,9 @@ import Navigation from "../Navbar/Navbar";
 // Löschesn eines Profils
 class ProfileSelection extends React.Component {
   state = {
-    profiles: []
+    profiles: [],
+    isLoading: true
   };
-
-  profileButtonHandler(e) {
-    alert("profil ausgewählt von: " + e.target.id);
-  }
-
-  createProfileButtonHandler() {
-    window.location.href="/PetProfileCreate"
-    alert("neues profil erstellen");
-  }
-
-  render() {
- 
-    // map -> läuft this.state.profiles durch und sagt quasi "führe für jedes profile die funktion darunter aus mit dem return"
-    // bei map kommt immer ein array raus. undzwar alle elemente die returned worden sind
-    const profiles = this.state.profiles.map(profile => {
-      if (!profile.image) {
-        return;
-      }
-      return (
-      
-     
-       
-        <ProfileButton
-          key={profile._id}
-          onClick={this.profileButtonHandler}
-          profilePicture={"https://targetpractise-3737.restdb.io/media/" + profile.image}
-        />
-      );
-    });
-    return (
-      
-      
-      <div className="ProfileSelection">
-        <Navigation />
-        <h1 className="ProfileHeading"> Pick a Profile</h1>
-        <div className="ProfileButtonWrapper">{profiles}</div>
-        
-
-        <div className="Anlegen">
-        
-        
-        
-          <ProfileButton
-            onClick={this.createProfileButtonHandler}
-            id="create-profile"
-            petId="-1"
-            profilePicture={require("../assets/PetProfil_create.jpg")}
-          />
-           
-        </div>
-      </div>
-  
-     
-      
-    );
-  }
 
   componentDidMount() {
     axios
@@ -86,7 +32,58 @@ class ProfileSelection extends React.Component {
           this.setState({ profiles: response.data });
           console.log(response);
         }
+        this.setState({
+          isLoading: false
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          isLoading: false
+        });
       });
+  }
+
+  profileButtonHandler(e) {
+    alert("profil ausgewählt von: " + e.target.id);
+  }
+
+  createProfileButtonHandler() {
+    window.location.href = "/PetProfileCreate";
+    alert("neues profil erstellen");
+  }
+
+  render() {
+    // map -> läuft this.state.profiles durch und sagt quasi "führe für jedes profile die funktion darunter aus mit dem return"
+    // bei map kommt immer ein array raus. undzwar alle elemente die returned worden sind
+    const profiles = this.state.profiles.map(profile => {
+      return profile.image ? (
+        <ProfileButton
+          key={profile._id}
+          onClick={this.profileButtonHandler}
+          profilePicture={
+            "https://targetpractise-3737.restdb.io/media/" + profile.image
+          }
+        />
+      ) : null;
+    });
+    return (
+      <div className="ProfileSelection">
+        <Navigation />
+        {this.state.isLoading ? <Spinner /> : null}
+        <h1 className="ProfileHeading"> Pick a Profile</h1>
+        <div className="ProfileButtonWrapper">{profiles}</div>
+
+        <div className="Anlegen">
+          <ProfileButton
+            onClick={this.createProfileButtonHandler}
+            id="create-profile"
+            petId="-1"
+            profilePicture={require("../assets/PetProfil_create.jpg")}
+          />
+        </div>
+      </div>
+    );
   }
 }
 

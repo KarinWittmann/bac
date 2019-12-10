@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Slider.css";
 
 
-// Verlinkung zu Spielen
+
 
 class Slider extends Component {
 

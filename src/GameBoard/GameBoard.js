@@ -2,19 +2,13 @@
 //mouse on und mouse up (get time) statt Button
 
 import React from 'react'
+import './GameBoard.css'
 
-const Board = props => {
+export default function  GameBoard({boardClicked, style}) {
   return (
     <div
-      onClick={props.boardClicked}
-      style={{
-        display: 'flex',
-        height: '100vh',
-        width: '100%',
-        backgroundColor: props.bg,
-      }}
+      onClick={boardClicked}
+      className={style}
     />
   )
 }
-
-export default Board

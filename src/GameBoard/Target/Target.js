@@ -1,21 +1,19 @@
 // TODO - exit Button
 
 import React from 'react'
+import './target.css'
 
-const Target = props => {
+
+export default function Target({clicked, posX, posY}) {
   return (
-    <div
-      onClick={props.clicked}
+    <div className="target"
+      onClick={clicked}
       style={{
-        width: '110px',
-        height: '110px',
-        position: 'absolute',
-        top: props.posY,
-        left: props.posX,
-        backgroundColor: 'white',
+        top: posY,
+        left:posX,
       }}
-    />
+    ><img src={require("../../assets/target.jpg")} className="target_image" alt=""/></div>
   )
 }
 
-export default Target
+

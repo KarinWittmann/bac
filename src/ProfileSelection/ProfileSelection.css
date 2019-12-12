@@ -1,35 +1,33 @@
-.ProfileSelection{
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rosybrown;
-    height: 100vh;
+.ProfileSelection {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rosybrown;
+  height: 100%;
 }
 
-.ProfileHeading{
-    text-align: center;
-    margin: 1rem;
+.ProfileHeading {
+  text-align: center;
+  margin: 5rem 0 0 0;
+  font-size: 70px;
+  font-weight: 200;
+  color: white;
 }
 
-.ProfileButtonWrapper{
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-   background-size: cover;
-    
+.ProfileButtonWrapper {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-size: cover;
 }
-.Anlegen{
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    
-}
-#PetProfil_1{
 
-  height: 5rem;
+.Anlegen {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }

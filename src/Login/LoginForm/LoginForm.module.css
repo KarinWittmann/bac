@@ -70,3 +70,6 @@ form {
   transition-duration: 0.25s;
   font-weight: 300;
 }
+.Footer {
+  position: fixed;
+}

@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import "./Slider.css";
-
-
-
+import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
 class Slider extends Component {
-
- 
   state = {
     images: [
       require("../assets/Level1.jpg"),
       require("../assets/Level2.jpg"),
-      require("../assets/Level3.jpg"),
+      require("../assets/Level3.jpg")
       // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
     ],
     currentIndex: 0,
@@ -64,11 +60,11 @@ class Slider extends Component {
           }}
         >
           {this.state.images.map((image, i) => (
-            <Slide key={i} levelId={i+1} image={image} />
+            <Slide key={i} levelId={i + 1} image={image} />
           ))}
         </div>
 
-        <LeftArrow goToPrevSlide={this.goToPrevSlide}/>
+        <LeftArrow goToPrevSlide={this.goToPrevSlide} />
 
         <RightArrow goToNextSlide={this.goToNextSlide} />
       </div>
@@ -80,19 +76,21 @@ const Slide = ({ image, levelId }) => {
   const level = "/level" + levelId;
   const styles = {
     backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "50% 60%",
-   
-
+    backgroundPosition: "50% 60%"
   };
-  return <a href={level}><div className="slide" style={styles}></div></a>;
+  return (
+    <a href={level}>
+      <div className="slide" style={styles}></div>
+    </a>
+  );
 };
 
 const LeftArrow = props => {
   return (
-    <div className="backArrow arrow" onClick={props.goToPrevSlide} >
-      <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+    <div className="backArrow arrow" onClick={props.goToPrevSlide}>
+      <IoIosArrowDropleft />
     </div>
   );
 };
@@ -100,7 +98,7 @@ const LeftArrow = props => {
 const RightArrow = props => {
   return (
     <div className="nextArrow arrow" onClick={props.goToNextSlide}>
-      <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+      <IoIosArrowDropright />
     </div>
   );
 };

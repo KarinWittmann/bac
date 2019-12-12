@@ -1,19 +1,12 @@
-.App{
-  background-color: black;
-  height:100vh;
-  background: url(./assets/wenzi.JPG);
-  background-repeat: no-repeat;
-  background-position: fixed;
-  background-size: cover;
-  
+.App {
+  height: 100vh;
 }
-.AppDark{
+.AppDark {
   background-color: black;
-  height:100vh;
+  height: 100vh;
   background: url(./assets/wenzi.JPG);
   background-repeat: no-repeat;
   background-position: fixed;
   background-size: cover;
   opacity: 0.5;
-  
 }

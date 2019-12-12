@@ -2,9 +2,9 @@ import React from "react";
 import ProfileButton from "./ProfileButton/ProfileButton";
 import "./ProfileSelection.css";
 import axios from "axios";
-import Navigation from "../Navbar/Navbar";
 import Spinner from "../UI/Spinner/Spinner";
-
+import WithNavbar from "../HOC/withNavbar";
+import ProfilePicker from "../ProfilePicker/ProfilePicker";
 //ToDo
 // CSS Styling responsiv
 // Nur 3 Angelegte Profile zulassen
@@ -67,12 +67,12 @@ class ProfileSelection extends React.Component {
         />
       ) : null;
     });
+
     return (
       <div className="ProfileSelection">
-        <Navigation />
         {this.state.isLoading ? <Spinner /> : null}
-        <h1 className="ProfileHeading"> Pick a Profile</h1>
-        <div className="ProfileButtonWrapper">{profiles}</div>
+        {/* <h1 className="ProfileHeading"> Pick a Profile</h1> */}
+        {/* <div className="ProfileButtonWrapper">{profiles}</div>
 
         <div className="Anlegen">
           <ProfileButton
@@ -80,11 +80,14 @@ class ProfileSelection extends React.Component {
             id="create-profile"
             petId="-1"
             profilePicture={require("../assets/PetProfil_create.jpg")}
-          />
-        </div>
+          /> </div>*/}
+        <ProfilePicker
+          profiles={this.state.profiles}
+          heading="Pick a Profile"
+        />
       </div>
     );
   }
 }
 
-export default ProfileSelection;
+export default WithNavbar(ProfileSelection);

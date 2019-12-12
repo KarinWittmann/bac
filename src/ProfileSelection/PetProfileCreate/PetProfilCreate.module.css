@@ -23,8 +23,7 @@ form {
 .container h1 {
   font-size: 70px;
   margin: 7px;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-put;
+
   font-weight: 200;
   color: white;
 }

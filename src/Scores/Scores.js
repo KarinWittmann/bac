@@ -1,29 +1,22 @@
-import React, {Component} from 'react';
-import Navigation from "../Navbar/Navbar";
-import './Scores.css';
+import React, { Component } from "react";
+import "./Scores.css";
 import ProfileSelection from "../ProfileSelection/ProfileSelection";
 import DisplayScores from "../Scores/DisplayScores";
-
+import WithNavbar from "../HOC/withNavbar";
 
 class Scores extends Component {
-
-    render(){
-
-        return (
-
-   
-        <div className="Panel">
-            <Navigation/>
-                <div className="Oben">
-                    <ProfileSelection />
-                </div>
-                <div className="Unten">
-                   < DisplayScores />
-                </div>
+  render() {
+    return (
+      <div className="Panel">
+        <div className="Oben">
+          <ProfileSelection />
         </div>
-    )
-}
+        <div className="Unten">
+          <DisplayScores />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Scores;
-
+export default WithNavbar(Scores);

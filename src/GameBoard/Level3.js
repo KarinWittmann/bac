@@ -1,102 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import GameBoard from "./GameBoard";
 import Target from "./Target/Target";
+import "./level.css";
 
+const element = {
+  target: "gameboard-target",
+  board: "gameboard-board",
+  default: "gameboard"
+};
+const randomizePosition = targetSize => ({
+  x: Math.random() * (window.innerWidth - targetSize.width),
+  y: Math.random() * (window.innerHeight - targetSize.height)
+});
+const hasSmallScreen = () =>
+  window.innerWidth <= 500 || window.innerHeight <= 500;
+const calculateSize = () =>
+  hasSmallScreen() ? { width: 100, height: 100 } : { width: 200, height: 200 };
 
-// TODO - exit Button
-// Als Funktion und responsiv random
-class Level3 extends React.Component {
+export default function Level3() {
+  const targetSize = calculateSize();
+  const [clicked, setClicked] = useState(element.default);
+  const [targetPosition, setTargetPosition] = useState(
+    randomizePosition(targetSize)
+  );
 
-  state = {
-    boardClicked: false,
-    targetClicked: false,
-    bgColor: 'grey',
-    targetPosition: {
-      x: 100,
-      y: 80,
-    },
-  }
-//level
-  changePosition = (x, y) => {
-    this.setState({
-      ...this.state,
-      targetPosition: {
-        x: x,
-        y: y,
-      },
-    })
-  }
-  //level3
-  changePositionRandom = () => {
-    let x = Math.random() * window.innerWidth - 50
-    let y = Math.random() * window.innerHeight - 50
+  const clickedhandler = selectedElement => {
+    setTargetPosition(randomizePosition(targetSize));
+    setClicked(selectedElement);
+    setTimeout(() => setClicked(element.default), 1000);
+  };
 
-    if (x < 0) {
-      x -= x
-    }
-    if (y < 0) {
-      y -= y
-    }
+  // const animate = () => {
+  //   setTimeout(() => animate(), 1000);
+  //   setTargetPosition(randomizePosition(targetSize));
+  // }
 
-    this.changePosition(x, y)
-  }
-  targetClickedHandler = () => {
-    this.setState({
-      ...this.state,
-      targetClicked: true,
-      bgColor: 'green',
-    })
-
-    setTimeout(() => {
-      this.resetState()
-      this.resetBgColor()
-      this.changePositionRandom()
-    }, 1000)
-  }
-
-  resetBgColor = () => {
-    this.setState({
-      ...this.state,
-      bgColor: 'grey',
-    })
-  }
-
-  boardClickedHandler = () => {
-    this.setState({
-      ...this.state,
-      bgColor: 'red',
-      boardClicked: true,
-    })
-
-    setTimeout(() => {
-      this.resetState()
-      this.resetBgColor()
-    }, 1000)
-  }
-
-  resetState = () => {
-    this.setState({
-      ...this.state,
-      targetClicked: false,
-      boardClicked: false,
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <GameBoard
-          bg={this.state.bgColor}
-          boardClicked={this.boardClickedHandler}
-        />
-        <Target
-          posX={this.state.targetPosition.x}
-          posY={this.state.targetPosition.y}
-          clicked={this.targetClickedHandler}
-        />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <GameBoard
+        style={clicked}
+        boardClicked={() => clickedhandler(element.board)}
+      />
+      <Target
+        position={targetPosition}
+        size={targetSize}
+        clicked={() => clickedhandler(element.target)}
+      />
+    </div>
+  );
 }
-
-export default Level3;

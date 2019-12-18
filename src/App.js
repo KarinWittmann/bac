@@ -12,7 +12,7 @@ import Registration from "./Login/Registration/Registration";
 import Level1 from "./GameBoard/Level1";
 import Level2 from "./GameBoard/Level2";
 import Level3 from "./GameBoard/Level3";
-
+import Level4 from "./GameBoard/Level4";
 import "./App.css";
 import PetProfilCreate from "./ProfileSelection/PetProfileCreate/PetProfilCreate";
 import Description from "./Description/Description";
@@ -48,6 +48,7 @@ class App extends Component {
             <Route path="/petProfileCreate" component={PetProfilCreate} />
             <Route path="/register" component={Registration} />
             <Route path="/scores" component={Scores} />
+            <Route path="/level4" component={Level4} />
           </Switch>
         </BrowserRouter>
       </div>

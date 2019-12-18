@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GameBoard from "./GameBoard";
 import Target from "./Target/Target";
 import "./level.css";
+import { kMaxLength } from "buffer";
 
 const element = {
   target: "gameboard-target",
@@ -34,7 +35,6 @@ export default function Level3() {
   //   setTimeout(() => animate(), 1000);
   //   setTargetPosition(randomizePosition(targetSize));
   // }
-
   return (
     <div>
       <GameBoard

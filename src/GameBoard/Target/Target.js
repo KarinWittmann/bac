@@ -4,7 +4,7 @@ import "./target.css";
 export default function Target({
   clicked,
   position,
-  size = { width: "100%", height: "100%" }
+  size = { width: "100px", height: "100px" }
 }) {
   return (
     <div

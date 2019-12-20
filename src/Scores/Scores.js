@@ -3,13 +3,13 @@ import "./Scores.css";
 import ProfileSelection from "../ProfileSelection/ProfileSelection";
 import DisplayScores from "../Scores/DisplayScores";
 import WithNavbar from "../HOC/withNavbar";
-
+import Scorejetzt from "../Scores/Scorejetzt";
 class Scores extends Component {
   render() {
     return (
       <div className="Panel">
         <div className="Oben">
-          <ProfileSelection />
+          <Scorejetzt />
         </div>
         <div className="Unten">
           <DisplayScores />

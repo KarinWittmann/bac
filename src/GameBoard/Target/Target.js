@@ -18,7 +18,7 @@ export default function Target({
       }}
     >
       <img
-        src={require("../../assets/tar.png")}
+        src={require("../../assets/targe.png")}
         className="target_image"
         alt=""
       />

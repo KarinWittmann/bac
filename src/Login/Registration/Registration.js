@@ -9,7 +9,7 @@ class Register extends React.Component {
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    
+    // TODO vorher abfragen ob benutzer schon vorhanden? ODER gibt uns restdbio schon eine fehlermeldung wenn es den benutzer schon gibt? kann man den benutzernamen in der datenbank vielleicht auf unique einstellen?
     axios
       .post(
         "https://targetpractise-3737.restdb.io/rest/usertable",
@@ -33,6 +33,7 @@ class Register extends React.Component {
           loggedIn : true
         };
         console.log(response);
+        window.location.href = "/ProfileSelection"; // nicht super -> Läd Seite neu neu
         
       });
   }

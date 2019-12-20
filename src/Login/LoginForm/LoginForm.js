@@ -29,6 +29,10 @@ const LoginForm = props => {
       .then(response => {
         console.log(response.data);
         if (response.data.length > 0) {
+          window.loginInfo = {
+            id : response.data._id,
+            loggedIn : true
+          };
           window.location.href = "/ProfileSelection"; // nicht super -> Läd Seite neu neu
           //this.context.history.push('/ProfileSelection')
           alert("login erfolgreich");

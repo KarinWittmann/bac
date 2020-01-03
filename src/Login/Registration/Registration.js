@@ -1,88 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Registration.module.css";
-import axios from "axios";
+import axios from "../../services/axios";
+import { TextInput, PasswordInput } from '../../components/inputs';
 
-class Register extends React.Component {
-  postDataHandler(event) {
+export default function RegisterForm({onLogin}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submit = event => {
     event.preventDefault();
-    console.log(event);
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    // TODO vorher abfragen ob benutzer schon vorhanden? ODER gibt uns restdbio schon eine fehlermeldung wenn es den benutzer schon gibt? kann man den benutzernamen in der datenbank vielleicht auf unique einstellen?
-    axios
-      .post(
-        "https://targetpractise-3737.restdb.io/rest/usertable",
+    axios.post("profiles",
         {
-          username,
+          email,
           password
         },
-        {
-          headers: {
-            "content-type": "application/json",
-            "x-apikey": "5dc456d464e7774913b6ea11",
-            "cache-control": "no-cache"
-          }
-        }
       )
       .then(response => {
-        // TODO abfrage auf erfolg
-        // TODO navigiere auf startseite nach erfolgreicher registration
-        window.loginInfo = {
-          id : response.data._id,
-          loggedIn : true
-        };
         console.log(response);
-        window.location.href = "/ProfileSelection"; // nicht super -> Läd Seite neu neu
-        
+        onLogin(response.data);
       });
   }
 
-  render() {
-    console.log("context");
-    console.log(this.context);
-    const wrapper = {
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      marginTop: "0",
-      overflow: "hidden",
-      textAlign: "center",
-      backgroundColor: "rosybrown",
-      display: "flex",
-      flexFlow: "column",
-      alignItems: "center",
-      justifyContent: "center"
-    };
+  const wrapper = {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    marginTop: "0",
+    overflow: "hidden",
+    textAlign: "center",
+    backgroundColor: "rosybrown",
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  };
 
-    return (
-      <div style={wrapper}>
-        <div className={styles.container}>
-          <h1>Registration </h1>
-          <form onSubmit={this.postDataHandler}>
-            <input
-              id="username"
-              className={styles.Input}
-              onClick={this.props.clicked}
-              placeholder="Username"
-              type="text"
-              required
-            />
-            <input
-              id="password"
-              className={styles.Input}
-              placeholder="Password"
-              type="password"
-              required
-            />
-            <button className={styles.Input} id="login-button">
-              Save my Data
-            </button>
-          </form>
-        </div>
+  return (
+    <div style={wrapper}>
+      <div className={styles.container}>
+        <h1>Registration </h1>
+        <form onSubmit={submit}>
+          <TextInput id="email" placeholder="Email" value={email} onChange={setEmail} required />
+          <PasswordInput id="password" placeholder="Password" value={password} onChange={setPassword} required />
+          <button type="submit" className={styles.Input} id="login-button">Save my Data</button>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default Register;

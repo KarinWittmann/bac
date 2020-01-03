@@ -1,48 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import { TextInput, PasswordInput } from '../../components/inputs';
+import axios from "../../services/axios";
 import styles from "./LoginForm.module.css";
-import axios from "axios";
-import { link } from "fs";
-import { withRouter } from "react-router-dom";
-import Footer from "../../Footer/Footer";
 
-const LoginForm = props => {
-  const onLoginClickHandler = event => {
+export default function Login({onLogin, onRegister}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submit = event => {
     event.preventDefault();
-    console.log(event);
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const query =
-      '?q={"username": "' +
-      encodeURIComponent(username) +
-      '", "password": "' +
-      encodeURIComponent(password) +
-      '"}';
-    axios
-      .get("https://targetpractise-3737.restdb.io/rest/usertable" + query, {
-        headers: {
-          "content-type": "application/json",
-          "x-apikey": "5dc456d464e7774913b6ea11",
-          "cache-control": "no-cache"
+    axios.get("/profiles", {
+        params: {
+          q: {
+            "email": email,
+            "password": password
+          }
         }
       })
       .then(response => {
         console.log(response.data);
         if (response.data.length > 0) {
-          window.loginInfo = {
-            id : response.data._id,
-            loggedIn : true
-          };
-          window.location.href = "/ProfileSelection"; // nicht super -> Läd Seite neu neu
-          //this.context.history.push('/ProfileSelection')
-          alert("login erfolgreich");
+          onLogin(response.data);
         } else {
           alert("benutzername oder passwort falsch");
         }
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => console.log(error));
   };
 
   const wrapper = {
@@ -78,36 +61,15 @@ const LoginForm = props => {
     <div style={wrapper}>
       <div className={styles.container}>
         <h1>Welcome</h1>
-        <form onSubmit={onLoginClickHandler}>
-          <input
-            id="username"
-            className={styles.Input}
-            onClick={props.clicked}
-            placeholder="Username"
-            type="text"
-            required
-          />
-          <input
-            id="password"
-            className={styles.Input}
-            placeholder="Password"
-            type="password"
-            required
-          />
-          <button type="submit" className={styles.Input} id="login-button">
-            Login
-          </button>
+        <form onSubmit={submit}>
+          <TextInput id="email" placeholder="Email" value={email} onChange={setEmail} required />
+          <PasswordInput id="password" placeholder="Password" value={password} onChange={setPassword} required />
+          <button type="submit" className={styles.Input} id="login-button">Login</button>
         </form>
       </div>
-
-      <button style={button} className="register-button" id="register-button">
+      <button style={button} className="register-button" id="register-button" onClick={onRegister}>
         Register
       </button>
-      <div className="Footer">
-        <Footer />
-      </div>
     </div>
   );
 };
-
-export default withRouter(LoginForm);
